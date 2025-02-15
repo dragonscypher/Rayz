@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chest X-ray Analysis</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #E0E0E0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #1E1E1E;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+        }
+        input[type="file"] {
+            display: none;
+        }
+        label {
+            background: #007BFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        label:hover {
+            background: #0056b3;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #28A745;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Upload Chest X-ray</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="fileInput">
+            <label for="fileInput">Choose X-ray Image</label>
+            <br><br>
+            <button type="submit">Analyze Image</button>
+        </form>
+    </div>
+
+</body>
+</html>

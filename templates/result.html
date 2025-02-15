@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-ray Analysis Result</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #E0E0E0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #1E1E1E;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .report {
+            padding: 15px;
+            background: #272727;
+            border-radius: 5px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background: #17A2B8;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #138496;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            color: #17A2B8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>X-ray Analysis Report</h1>
+        
+        <div class="image-container">
+            <h3>Uploaded X-ray</h3>
+            <img src="{{ image_path }}" alt="Uploaded X-ray">
+        </div>
+        
+        <div class="image-container">
+            <h3>Prediction Probabilities</h3>
+            <img src="{{ plot_path }}" alt="Prediction Probabilities">
+        </div>
+        
+        <h2>Generated Radiology Report</h2>
+        <div class="report">
+            <p>{{ report }}</p>
+        </div>
+
+       
+        {% if health_links %}
+        <div class="links">
+            <h3>🔍 Learn More About These Conditions</h3>
+            <ul>
+                {% for condition, link in health_links.items() %}
+                    <li>🩺 <strong>{{ condition }}</strong>: <a href="{{ link }}" target="_blank">Read here</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="button-container">
+            <a href="/"><button class="btn">Upload Another X-ray</button></a>
+        </div>
+    </div>
+
+</body>
+</html>
