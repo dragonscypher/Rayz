@@ -18,8 +18,8 @@ Now, **RayZ** offers an **end-to-end AI-driven radiology assistant** 🏥.
 
 - **Hugging Face Model**: [RayZ EfficientNet_B0](https://huggingface.co/Dragonscypher/rayz_EfficientNet_B0)
 - **Datasets Used**:
-  - **NIH Chest X-ray Dataset** 📊
-  - **NLMCXR Dataset** 📚
+  - **NIH Chest X-ray Dataset** [📊](https://www.kaggle.com/datasets/nih-chest-xrays/data)
+  - **NLMCXR Dataset** [📚](https://huggingface.co/datasets/Fakhraddin/NLMCXR)
 
 ---
 
